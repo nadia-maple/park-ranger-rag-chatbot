@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-# park-ranger-rag-chatbot
-PARK RANGER AI ASSISTANT
 =======
-# 🌲 Park Ranger AI - Hybrid RAG Chatbot
+# 🌲 PARK RANGER AI ASSISTANT - Hybrid RAG Chatbot
 
 ## 📖 Project Description
 Park Ranger AI is an interactive, educational chatbot designed to answer questions about National Parks in the United States and Canada. Built using a **Retrieval-Augmented Generation (RAG)** pipeline, it acts as a virtual park ranger by grounding its answers in real documentation.
