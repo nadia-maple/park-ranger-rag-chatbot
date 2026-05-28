@@ -25,9 +25,9 @@ st.markdown("Ask me anything about National Parks in the US and Canada!")
 # ==========================================
 with st.sidebar:
     st.header("⚙️ Configuration")
-    api_key = st.text_input("Enter your Google Gemini API Key:", type="password")  # CHANGE: keep API key local to the session input.
+    api_key = st.text_input("Enter your Google Gemini API Key:", type="password")
     st.markdown("[Get a Gemini API Key](https://aistudio.google.com/app/apikey)")
-    clear_clicked = st.button("Clear Chat History")  # CHANGE: capture button click explicitly for cleaner control flow.
+    clear_clicked = st.button("Clear Chat History")
     st.divider()
     st.caption(
         "⚠️ **Disclaimer:** This is an unofficial, educational project. "
@@ -49,17 +49,17 @@ if "messages" not in st.session_state:
         }
     ]
 
-if "bot" not in st.session_state:  # CHANGE: initialize chatbot slot explicitly.
+if "bot" not in st.session_state: 
     st.session_state.bot = None
 
 
-@st.cache_resource(show_spinner=False)  # CHANGE: cache heavy chatbot initialization between reruns for the same key/config.
+@st.cache_resource(show_spinner=False)
 def load_chatbot(api_key_value: str) -> HybridRAGChatbot:
-    config = ChatbotConfig(memory_path=None)  # CHANGE: disable file-based shared memory in Streamlit to avoid cross-user leakage.
-    return HybridRAGChatbot(api_key=api_key_value, config=config)  # CHANGE: inject key directly instead of mutating global env vars.
+    config = ChatbotConfig(memory_path=None) 
+    return HybridRAGChatbot(api_key=api_key_value, config=config) 
 
 
-if clear_clicked:  # CHANGE: handle clear action in one place.
+if clear_clicked:
     st.session_state.messages = [
         {
             "role": "assistant",
@@ -68,21 +68,21 @@ if clear_clicked:  # CHANGE: handle clear action in one place.
         }
     ]
     if st.session_state.bot is not None:
-        st.session_state.bot.clear_memory()  # CHANGE: clear internal fallback memory if present.
+        st.session_state.bot.clear_memory() 
     st.success("History cleared!")
 
 
-if not api_key:  # CHANGE: halt app early until required credentials are provided.
+if not api_key:
     st.warning("👈 Please enter your Gemini API Key in the sidebar to start.")
     st.stop()
 
 
-try:  # CHANGE: wrap expensive chatbot initialization in clear error handling.
+try:
     if st.session_state.bot is None:
         with st.spinner("Waking up the Park Ranger (Loading Database)..."):
             st.session_state.bot = load_chatbot(api_key)
 except Exception as exc:
-    logger.exception("Failed to initialize chatbot")  # CHANGE: log stack trace for debugging.
+    logger.exception("Failed to initialize chatbot")
     st.error(f"Error loading the chatbot: {exc}")
     st.stop()
 
