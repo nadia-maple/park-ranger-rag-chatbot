@@ -98,7 +98,3 @@ tempCodeRunnerFile.py
 
 # OS files
 .DS_Store
-
-# Project-specific generated data
-chroma_parks_db/
-chunks_embeddings_outputs/chat_memory.json
