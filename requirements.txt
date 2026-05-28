@@ -1,0 +1,10 @@
+streamlit==1.57.0
+sentence-transformers==3.0.1
+chromadb==0.5.5
+torch==2.3.1
+transformers==4.44.2
+pyarrow==17.0.0
+numpy==1.26.4
+scikit-learn==1.5.1
+pandas
+google-genai
