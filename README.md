@@ -1,4 +1,3 @@
-=======
 # 🌲 PARK RANGER AI ASSISTANT - Hybrid RAG Chatbot
 
 ## 📖 Project Description
@@ -108,4 +107,3 @@ The app will automatically open in your default web browser at http://localhost:
 ---
 ⚠️ Disclaimer
 This is an unofficial, educational project. The information provided is sourced from Parks Canada and the US National Park Service but is not endorsed by or affiliated with either government. Always verify critical travel, safety, and permit information on official government websites.
->>>>>>> master
