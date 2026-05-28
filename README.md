@@ -15,8 +15,9 @@ The UI is built with **Streamlit** and the intelligence is powered by **Google's
 * **Conversation Memory:** Remembers the last few turns of the conversation for follow-up questions.
 * **Local Vector Database:** Uses `sentence-transformers/all-MiniLM-L6-v2` and ChromaDB for fast, lightweight, and free local text embedding.
 
-📂 Project Structure
 
+## 📂 Project Structure
+```
 park-ranger-rag-chatbot/
 ├── app.py                      # Main Streamlit user interface
 ├── requirements.txt            # Python dependencies
@@ -33,6 +34,7 @@ park-ranger-rag-chatbot/
 ├── notebooks/
 │   └── scraper_and_app.ipynb
 └── chunks_embeddings_outputs/
+```
 
 
 ## 🚀 How to Run Locally
