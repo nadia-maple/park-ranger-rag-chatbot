@@ -49,14 +49,14 @@ if "messages" not in st.session_state:
         }
     ]
 
-if "bot" not in st.session_state: 
+if "bot" not in st.session_state:
     st.session_state.bot = None
 
 
 @st.cache_resource(show_spinner=False)
 def load_chatbot(api_key_value: str) -> HybridRAGChatbot:
-    config = ChatbotConfig(memory_path=None) 
-    return HybridRAGChatbot(api_key=api_key_value, config=config) 
+    config = ChatbotConfig(memory_path=None)
+    return HybridRAGChatbot(api_key=api_key_value, config=config)
 
 
 if clear_clicked:
@@ -68,7 +68,7 @@ if clear_clicked:
         }
     ]
     if st.session_state.bot is not None:
-        st.session_state.bot.clear_memory() 
+        st.session_state.bot.clear_memory()
     st.success("History cleared!")
 
 

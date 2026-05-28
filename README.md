@@ -16,30 +16,23 @@ The UI is built with **Streamlit** and the intelligence is powered by **Google's
 * **Local Vector Database:** Uses `sentence-transformers/all-MiniLM-L6-v2` and ChromaDB for fast, lightweight, and free local text embedding.
 
 📂 Project Structure
+
 park-ranger-rag-chatbot/
-│
 ├── app.py                      # Main Streamlit user interface
 ├── requirements.txt            # Python dependencies
 ├── README.md
-│
 ├── src/
 │   ├── vector_store.py         # Script to chunk text, create embeddings, and build Chroma DB
 │   └── chatbot.py              # Core LLM logic, Chroma querying, and prompt engineering
-│
 ├── data/
-│   └── qa-combined-top-parks.csv   # Structured QA pairs for the hybrid fallback
+│   ├── qa-combined-top-parks.csv   # Structured QA pairs for the hybrid fallback
 │   └── processed/
 │       ├── canada-top-parks.json
 │       └── us-top-parks.json
-│
 ├── chroma_parks_db/            # Generated local vector database (created by vector_store.py)
-│
 ├── notebooks/
-│		└── scraper_and_app.ipynb
-│
-└── chunks_embeddings_outputs
- 
----
+│   └── scraper_and_app.ipynb
+└── chunks_embeddings_outputs/
 
 
 ## 🚀 How to Run Locally
