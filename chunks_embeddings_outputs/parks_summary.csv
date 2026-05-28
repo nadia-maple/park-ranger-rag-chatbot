@@ -1,0 +1,2 @@
+documents,chunks_created,avg_chunk_chars,embedding_model,vector_db,collection_name,reset_collection
+87,459,1152.32,sentence-transformers/all-MiniLM-L6-v2,Chroma,parks_rag_v1,True

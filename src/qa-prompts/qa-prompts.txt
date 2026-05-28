@@ -1,0 +1,40 @@
+You are an expert Travel Planner specializing in creating datasets for RAG chatbots. 
+
+I am going to provide a JSON file containing scraped and optimized markdown-table data from Parks Canada which has different info about 10 parks. Your task is to generate exactly 100 distinct - 10 per each park, high-quality, factual question-and-answer (Q&A) pairs based strictly on this data.
+
+### CRITICAL REQUIREMENTS FOR QUALITY:
+1. STANDALONE COMPLETENESS: Every question must be fully self-contained. Do not use vague references or pronouns like "the park," "this pass," or "the site." Instead, explicitly name the entity (e.g., "What is the discount for camping overnight with the Canada Strong Pass in 2026?" instead of "What is the camping discount?").
+2. TABLE LITERACY & AXIS ALIGNMENT: You will encounter data structured as Markdown tables (| Province / territory | Park | ...). You must read across the row axes flawlessly. Ensure that reservation launch dates, times, and timezones (e.g., NT, AT, ET, MT, PT, CST) match their exact park/campground row alignment without bleeding into neighboring data rows.
+3. INVARIANT FACTUAL TRUTH: Do not extrapolate or hallucinate. If a rule, fee, or date is not explicitly mentioned in the text, do not invent it.
+4. STRUCTURAL LOGIC: Distribute your questions evenly across all pages provided in the JSON to hit the target total without repeating concepts.
+
+### OUTPUT FORMAT:
+Provide the output strictly as a valid CSV format inside a markdown code block so I can copy and save it directly as qa_ca_parks_dataset.csv. Use standard double-quote escaping for fields if commas are present in the text.
+
+Columns required:
+question,answer,source_page
+
+---
+### SOURCE DATA (JSON):
+attached canada-parks.json
+
+-----------------------------------------------------------------------------
+You are an expert Travel Planner specializing in creating datasets for RAG chatbots. 
+
+I am going to provide a JSON file containing scraped and optimized markdown-table data from Parks USA which has different info about 10 parks. Your task is to generate exactly 100 distinct - 10 per each park, high-quality, factual question-and-answer (Q&A) pairs based strictly on this data.
+
+### CRITICAL REQUIREMENTS FOR QUALITY:
+1. STANDALONE COMPLETENESS: Every question must be fully self-contained. Do not use vague references or pronouns like "the park," "this pass," or "the site." Instead, explicitly name the entity (e.g., "What is the discount for camping overnight with the Canada Strong Pass in 2026?" instead of "What is the camping discount?").
+2. TABLE LITERACY & AXIS ALIGNMENT: You will encounter data structured as Markdown tables (| Province / territory | Park | ...). You must read across the row axes flawlessly. Ensure that reservation launch dates, times, and timezones (e.g., NT, AT, ET, MT, PT, CST) match their exact park/campground row alignment without bleeding into neighboring data rows.
+3. INVARIANT FACTUAL TRUTH: Do not extrapolate or hallucinate. If a rule, fee, or date is not explicitly mentioned in the text, do not invent it.
+4. STRUCTURAL LOGIC: Distribute your questions evenly across all pages provided in the JSON to hit the target total without repeating concepts.
+
+### OUTPUT FORMAT:
+Provide the output strictly as a valid CSV format inside a markdown code block so I can copy and save it directly as qa_usa_parks_dataset.csv. Use standard double-quote escaping for fields if commas are present in the text.
+
+Columns required:
+question,answer,source_page
+
+---
+### SOURCE DATA (JSON):
+us-top-parks.json
